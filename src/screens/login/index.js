@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -34,20 +34,15 @@ const useStyles = makeStyles((theme) => ({
 const Login = () => {
   const classes = useStyles();
 
-  const [name, setName] = useState("Margaret");
-  const [email, setEmail] = useState("margarethamilton@gmail.com");
-  const [password, setPassword] = useState("FlyMeToTheMoon");
+  const name = "Margaret";
+  const email = "margarethamilton@gmail.com";
+  const password = "FlyMeToTheMoon";
 
   const dispatch = useDispatch();
 
-  function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  }
-
   const checkEmptyField = () => {
     const checkIsEmpty = name !== "" && 
-      (email !== "" && validateEmail(email)) &&
+      email !== "" &&
       password !== "";
     return checkIsEmpty;
   }
@@ -64,9 +59,7 @@ const Login = () => {
         })
       );
     } else {
-      if (!checkEmptyField && !validateEmail(email)) {
-        alert("Please fill out all fields as required and click 'Log in'.");
-      } else alert("Please enter a valid email address.")
+      alert("Please fill out all fields as required and click 'Log in'.");
     }
   };
 
@@ -92,7 +85,7 @@ const Login = () => {
             autoComplete="name"
             autoFocus
             defaultValue={name}
-            //onChange={(e) => setName(e.currentTarget.value)}
+            disabled
           />
           <TextField
             variant="outlined"
@@ -105,7 +98,7 @@ const Login = () => {
             autoComplete="email"
             autoFocus
             defaultValue={email}
-            //onChange={(e) => setEmail(e.currentTarget.value)}
+            disabled
           />
           <TextField
             variant="outlined"
@@ -118,7 +111,7 @@ const Login = () => {
             id="password"
             autoComplete="current-password"
             defaultValue={password}
-            //onChange={(e) => setPassword(e.currentTarget.value)}
+            disabled
           />
           <Button
             type="submit"
