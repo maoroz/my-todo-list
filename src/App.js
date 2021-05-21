@@ -1,9 +1,8 @@
 import React from "react";
-import "./AppStyle.css";
-import Login from "./screens/login";
-import Home from "./screens/home";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
+import Login from "./screens/login";
+import Home from "./screens/home";
 import DenseAppBar from './components/appBar/appBar';
 
 const App = () => {
