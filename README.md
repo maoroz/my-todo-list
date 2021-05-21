@@ -4,7 +4,7 @@ React, Redux, Material UI.
 
 ## Star 
 
-###`git clone ...`
+### `git clone ...`
 ### `cd my-todo-list`
 ### `npm i`
 ### `npm run start`
