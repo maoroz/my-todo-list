@@ -2,7 +2,7 @@
 
 React, Redux, Material UI.
 
-## Star 
+## Starting... 
 
 ### `git clone ...`
 ### `cd my-todo-list`
